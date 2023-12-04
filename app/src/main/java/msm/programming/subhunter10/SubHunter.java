@@ -20,7 +20,7 @@ public class SubHunter extends Activity {
     int numberHorizontalPixels;
     int numberVerticalPixels;
     int blockSize;
-    int gridWidth = 40;
+    int gridWidth = 30;
     int gridHeight;
     float horizontalTouched = -100;
     float verticalTouched = -100;
@@ -163,6 +163,7 @@ public class SubHunter extends Activity {
             if(hit)
             boom();
                 else {
+                    //Sub is moved in a random direction up to 2 squares
                     int max = 2;
                 Random random = new Random();
                 int rand = random.nextInt(max) * (random.nextBoolean()? -1:1);
@@ -181,7 +182,7 @@ public class SubHunter extends Activity {
 
         //Draw some huge white text
         paint.setColor(Color.argb(255,0,255,255));
-        paint.setTextSize(blockSize*10);
+        paint.setTextSize(blockSize*5);
         canvas.drawText("BOOM!!", blockSize*4,blockSize*14,paint);
         //draw some prompt restarting
         paint.setTextSize(blockSize*2);
